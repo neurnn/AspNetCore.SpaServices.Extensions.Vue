@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <PackageId>AspNetCore.SpaServices.Extensions.Vue</PackageId>
+    <PackageVersion>0.0.1</PackageVersion>
+
+    <Authors>Miroslav Peterka</Authors>
+    <Description>Helper for build single-page application (SPA) on ASP.NET MVC Core using Vue.js.</Description>
+    <PackageProjectUrl>https://github.com/wikin/AspNetCore.SpaServices.Extensions.Vue</PackageProjectUrl>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.8" />
+  </ItemGroup>
+
+  <ItemGroup Label="Packaging">
+    <Content Include="build/AspNetCore.SpaServices.Extensions.Vue.targets" PackagePath="build/AspNetCore.SpaServices.Extensions.Vue.targets" />
+    <None Include="icon.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
