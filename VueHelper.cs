@@ -23,6 +23,9 @@ namespace AspNetCore.SpaServices.Extensions.Vue
 
     public static void UseVueDevelopmentServer(this ISpaBuilder spa)
     {
+      if (string.IsNullOrWhiteSpace(spa.Options.SourcePath))
+        spa.Options.SourcePath = "ClientApp\\";
+
       spa.UseProxyToSpaDevelopmentServer(async () =>
       {
         var loggerFactory = spa.ApplicationBuilder.ApplicationServices.GetService<ILoggerFactory>();
@@ -39,7 +42,7 @@ namespace AspNetCore.SpaServices.Extensions.Vue
         {
           FileName = isWindows ? "cmd" : "npm",
           Arguments = $"{(isWindows ? "/c npm " : "")}run serve",
-          WorkingDirectory = "ClientApp",
+          WorkingDirectory = spa.Options.SourcePath,
           RedirectStandardError = true,
           RedirectStandardInput = true,
           RedirectStandardOutput = true,
