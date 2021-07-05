@@ -10,9 +10,17 @@ Example project: https://github.com/wikin/AspNetCore.SpaServices.Extensions.Vue-
 
 ## Limitations
 - Node.js must be instaled on development machine
-- Client application must be inside folder `ClientApp`
 - Development must be at **HTTP** to make Hot Module Replacement works.
 
+## Setting SPA source directory
+Add a property to project file at begining.
+```
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <SpaRoot>ClientApp\</SpaRoot>
+  </PropertyGroup>
+  ..........
+```
 
 ## Endpoint Routing in AspNetCore
 ```csharp
